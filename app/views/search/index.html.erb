@@ -1,0 +1,26 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+  <p class ="navbar-brand">The Four Nations</p>
+  </div>
+</nav>
+
+<h3> Members of <%= "#{@nation}" %></h3>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Photo</th>
+      <th>Allies</th>
+      <th>Enemies</th>
+      <th>Affiliations</th>
+    </tr>
+    <% @search_results.each do |member| %>
+      <tr>
+        <td><%= member.name %></td>
+        <td><%= member.photoUrl %></td>
+        <td><%= member.allies %></td>
+        <td><%= member.enemies %></td>
+        <td><%= member.affiliation %></td>
+      </tr>
+    <% end %>
+  </table>
+      
