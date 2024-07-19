@@ -5,6 +5,7 @@
 </nav>
 
 <h3> Members of <%= "#{@nation.gsub('+', ' ').titleize}" %></h3>
+<p> Total number of people who live in the <%= "#{@nation.gsub('+', ' ').titleize}" %>: <%= "#{@total_members}" %> 
   <table>
     <tr>
       <th>Name</th>
