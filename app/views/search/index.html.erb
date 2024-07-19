@@ -4,7 +4,7 @@
   </div>
 </nav>
 
-<h3> Members of <%= "#{@nation}" %></h3>
+<h3> Members of <%= "#{@nation.gsub('+', ' ').titleize}" %></h3>
   <table>
     <tr>
       <th>Name</th>
@@ -16,9 +16,9 @@
     <% @search_results.each do |member| %>
       <tr>
         <td><%= member.name %></td>
-        <td><%= member.photoUrl %></td>
-        <td><%= member.allies %></td>
-        <td><%= member.enemies %></td>
+        <td><%= image_tag "#{member.photoUrl}" %></td>
+        <td><%= member.allies.join(", ") %></td>
+        <td><%= member.enemies.join(", ") %></td>
         <td><%= member.affiliation %></td>
       </tr>
     <% end %>
